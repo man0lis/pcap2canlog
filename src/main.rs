@@ -66,7 +66,7 @@ fn run() -> Result<()> {
             // print the packet in canlog format
             // one might what to change the device name used, but thats future work :D
             println!(
-                "({}.{}) can0 {:X}#{}",
+                "({}.{:06}) can0 {:X}#{}",
                 packet.header.ts.tv_sec, packet.header.ts.tv_usec, can_id, can_hex_str
             );
         };
