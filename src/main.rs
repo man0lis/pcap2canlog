@@ -53,6 +53,10 @@ fn run() -> Result<()> {
             // extract length of can data
             let can_data_len = packet_data[4] as usize;
             // extract can data
+            if packet_data.len() < can_data_len + 8 {
+                eprintln!("malformed can packet, data is shorter than given length");
+                continue;
+            }
             let can_msg = &packet_data[8..can_data_len + 8];
             // convert can data to hex string
             let mut can_hex_str = String::new();
