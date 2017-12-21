@@ -53,11 +53,11 @@ fn run() -> Result<()> {
             // extract length of can data
             let can_data_len = packet_data[4] as usize;
             // extract can data
-            let can_msg = &packet_data[8..can_data_len+8];
+            let can_msg = &packet_data[8..can_data_len + 8];
             // convert can data to hex string
             let mut can_hex_str = String::new();
             for b in can_msg.iter() {
-                can_hex_str.push_str(format!("{:02X}",b).as_ref());
+                can_hex_str.push_str(format!("{:02X}", b).as_ref());
             }
             // print the packet in canlog format
             // one might what to change the device name used, but thats future work :D
