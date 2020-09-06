@@ -2,6 +2,7 @@
 name = "pcap2canlog"
 version = "0.1.0"
 authors = ["Robin Nehls <git@manol.is>"]
+edition = "2018"
 
 [dependencies]
 pcap = "0.7"
